@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building.."
+                echo "Installing npm dependencies..."
                 sh '''
-                echo "doing build stuff.."
+                npm i
                 '''
             }
         }
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                echo "doing test stuff.."
+                npm test
                 '''
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Deliver....'
                 sh '''
-                echo "doing delivery stuff.."
+                npm run
                 '''
             }
         }
